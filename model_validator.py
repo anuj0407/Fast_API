@@ -16,22 +16,20 @@ class Patient(BaseModel):
             raise ValueError("Patients older than 60 must have an emergency contact")
         return model
     
-def insert_patient_data(patient: Patient):
+def display(patient: Patient):
     print(patient.name)
     print(patient.age)
     print(patient.weight)
     print(patient.married)
     print(patient.allergies)
     print(patient.contact_details)
+
+def insert_patient_data(patient: Patient):
+    display(patient)
     print("Inserted")
 
 def update_patient_data(patient: Patient):
-    print(patient.name)
-    print(patient.age)
-    print(patient.weight)
-    print(patient.married)
-    print(patient.allergies)
-    print(patient.contact_details)
+    display(patient)
     print("Updated")
     
 patient_info = {"name":"John","email":"johnDoe@icici.com","age":65,"weight":80.8,"married":True,"allergies":["Pollen","Dust"],"contact_details":{"phone_no":"9282984213",'emergency':'2049934992'}}
