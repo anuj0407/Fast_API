@@ -17,23 +17,21 @@ class Patient(BaseModel):
     def bmi(self) -> float:
         bmi = round(self.weight/(self.height**2))
         return bmi
-    
-def insert_patient_data(patient: Patient):
+
+def display(patient: Patient):
     print(patient.name)
     print(patient.age)
     print(patient.weight)
     print(patient.married)
     print(patient.allergies)
     print(patient.contact_details)
+
+def insert_patient_data(patient: Patient):
+    display(patient)
     print("Inserted")
 
 def update_patient_data(patient: Patient):
-    print(patient.name)
-    print(patient.age)
-    print(patient.weight)
-    print(patient.married)
-    print(patient.allergies)
-    print(patient.contact_details)
+    display(patient)
     print("BMI :",patient.bmi)
     print("Updated")
     
